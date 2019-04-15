@@ -1,10 +1,15 @@
+const dotenv= require('dotenv').config({
+    path:`.env`
+});
+
 module.exports={
+   
     plugins:[
         {
             resolve:`gatsby-source-contentful`,
             options:{
-                spaceId:`contentful-space-id`,
-                accessToken:`contentful-access-token`,
+                spaceId:`${process.env.CONTENFUL_SPACE}`,
+                accessToken:`${process.env.CONTENFUL_TOKEN}`,
                 downloadLocal: true,
             }
         },
